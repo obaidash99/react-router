@@ -3,19 +3,22 @@ import './App.css';
 import About from './About';
 import Nav from './Nav';
 import Shop from './Shop';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Home from './Home';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {
 	return (
 		<Router>
 			<div className="App">
 				<Nav />
-				<Switch>
-					<Route path="/about">
-						<About />
-					</Route>
-					{/* <Route path="/shop" component={Shop} /> */}
-				</Switch>
+				<Routes>
+					<Route path="/" exact element={<Home />} />
+					<Route path="/about" element={<About />} />
+					<Route path="/shop" element={<Shop />} />
+				</Routes>
+				{/* <Nav />
+				<About />
+				<Shop /> */}
 			</div>
 		</Router>
 	);
