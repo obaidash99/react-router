@@ -4,6 +4,7 @@ import About from './About';
 import Nav from './Nav';
 import Shop from './Shop';
 import Home from './Home';
+import Ayahs from './Ayahs';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {
@@ -14,11 +15,9 @@ function App() {
 				<Routes>
 					<Route path="/" exact element={<Home />} />
 					<Route path="/about" element={<About />} />
-					<Route path="/shop" element={<Shop />} />
+					<Route path="/shop" exact element={<Shop />} />
+					<Route path="/shop/:id" element={<Ayahs />} />
 				</Routes>
-				{/* <Nav />
-				<About />
-				<Shop /> */}
 			</div>
 		</Router>
 	);
