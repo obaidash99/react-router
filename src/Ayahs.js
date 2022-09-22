@@ -4,10 +4,10 @@ import { Link } from 'react-router-dom';
 
 // http://www.omdbapi.com?apikey=d1495752
 
-function Ayahs({match}) {
+function Ayahs({ state }) {
 	useEffect(() => {
 		fetchSurah();
-		console.log(match);
+		console.log(state);
 	}, []);
 
 	const [surah, setSurah] = useState([]);
